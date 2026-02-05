@@ -1,47 +1,79 @@
 ---
 sidebar_position: 1
+title: Introduction
 ---
 
-# Tutorial Intro
+# Charm Editor Documentation
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to the official documentation for **Charm Editor** ✨  
+This documentation describes the system architecture, core concepts, and internal modules of the project.
 
-## Getting Started
+---
 
-Get started by **creating a new site**.
+## What is Charm Editor?
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Charm Editor is a **modular**, **extensible** shader-oriented code editor designed with a strong architectural foundation:
 
-### What you'll need
+- Strict separation between **Core / UI / Infrastructure**
+- Support for multiple **Editor Engines** (Monaco, CodeMirror)
+- First-class **LSP integration**
+- Multi-runtime support: **Web** and **Desktop (Electron)**
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+The project prioritizes long-term maintainability and scalability over short-term convenience.
 
-## Generate a new site
+---
 
-Generate a new Docusaurus site using the **classic template**.
+## Documentation Structure
 
-The classic template will automatically be added to your project after you run the command:
+The documentation is organized into clear, focused sections:
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+### 🧭 Architecture
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+- System overview
+- High-level and detailed data flows
+- Architectural decisions (ADRs)
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+### 🧱 Core & Internals
 
-## Start your site
+- Domain model
+- Use cases
+- Editor engine abstraction
+- File system and LSP layers
 
-Run the development server:
+### 🔌 Platform
 
-```bash
-cd my-website
-npm run start
-```
+- Electron architecture
+- IPC contracts
+- Runtime-specific constraints
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+### 🗺️ Roadmap
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+- Planned features
+- Execution phases
+- Long-term vision
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+### 📘 Glossary
+
+- Shared terminology
+- Core concepts and definitions
+
+---
+
+## Where to Start
+
+- New to the project → **Architecture / Overview**
+- Working on core logic → **Core & Editor Engine**
+- Desktop-specific work → **Platform / IPC**
+
+---
+
+## Notes
+
+- This documentation targets **developers**, not end users
+- All diagrams are authored using **Mermaid**
+- All major architectural decisions are documented in **DECISIONS**
+
+---
+
+> The purpose of this documentation is not only to explain _what_ exists,  
+> but also _why_ the system is designed this way.
