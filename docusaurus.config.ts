@@ -80,9 +80,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "My Site",
+      title: "Charm-Editor",
       logo: {
-        alt: "My Site Logo",
+        alt: "Charm-Editor Logo",
         src: "img/logo.svg",
       },
       items: [
@@ -94,8 +94,8 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
+          href: "https://github.com/Charm-Editor",
+          label: "GitHub org",
           position: "right",
         },
       ],
@@ -137,8 +137,8 @@ const config: Config = {
               to: "/blog",
             },
             {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              label: "GitHub org",
+              href: "https://github.com/Charm-Editor",
             },
           ],
         },
