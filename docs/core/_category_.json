@@ -1,4 +1,10 @@
 {
   "label": "Core & Engines",
-  "position": 3
+  "position": 3,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Core & Engines",
+    "description": "Core architecture and engine internals of Charm Editor."
+  }
 }
