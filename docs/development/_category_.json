@@ -1,0 +1,10 @@
+{
+  "label": "Development",
+  "position": 12,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Development",
+    "description": "Development features and user guides of Charm Editor."
+  }
+}
