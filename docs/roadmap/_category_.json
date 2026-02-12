@@ -1,4 +1,10 @@
 {
   "label": "Roadmap",
-  "position": 7
+  "position": 7,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Roadmap",
+    "description": "Roadmap features and user guides of Charm Editor."
+  }
 }
