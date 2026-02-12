@@ -1,4 +1,10 @@
 {
   "label": "Platform",
-  "position": 5
+  "position": 5,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Platform",
+    "description": "Platform features and user guides of Charm Editor."
+  }
 }
