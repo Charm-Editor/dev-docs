@@ -73,6 +73,24 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+
+        language: ["en"],
+
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: true,
+
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
@@ -107,8 +125,24 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
+              label: "Intro",
               to: "/docs/intro",
+            },
+            {
+              label: "Architecture",
+              to: "/docs/architecture",
+            },
+            {
+              label: "Core & Engines",
+              to: "/docs/category/core--engines",
+            },
+            {
+              label: "Product",
+              to: "/docs/category/product",
+            },
+            {
+              label: "Roadmap",
+              to: "/docs/roadmap",
             },
           ],
         },
