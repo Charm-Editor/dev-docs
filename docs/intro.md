@@ -23,47 +23,58 @@ The project prioritizes long-term maintainability and scalability over short-ter
 
 ---
 
+## Tech Stack
+
+Charm Editor is built with a modern, high-performance stack:
+
+- **Frontend**: [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) + [Tailwind CSS](https://tailwindcss.com/)
+- **Core Logic**: Pure TypeScript (Domain-Driven Design)
+- **Runtimes**: [Electron](https://www.electronjs.org/) (Desktop) & Browser (Web)
+- **Editor Engines**: [Monaco](https://microsoft.github.io/monaco-editor/) & [CodeMirror 6](https://codemirror.net/)
+- **Language Intelligence**: [Zig](https://ziglang.org/) (for `glsl_analyzer`)
+- **Graphics**: WebGPU & WebGL
+
+---
+
 ## Documentation Structure
 
 The documentation is organized into clear, focused sections:
 
-### 🧭 Architecture
+### 🧭 [Architecture](./architecture/ARCHITECTURE.md)
 
-- System overview
-- High-level and detailed data flows
-- Architectural decisions (ADRs)
+- [System Overview](./architecture/ARCHITECTURE.md#2-high-level-architecture)
+- [Data Flows](./architecture/DATA_FLOW.md)
+- [Design Decisions](./architecture/DECISIONS.md)
 
-### 🧱 Core & Internals
+### 🧱 [Core & Internals](./category/core--engines)
 
-- Domain model
-- Use cases
-- Editor engine abstraction
-- File system and LSP layers
+- [Domain Model](./core/MODULES.md)
+- [Editor Engine Abstraction](./core/EDITOR_ENGINE.md)
+- [File System Layer](./core/FILE_SYSTEM.md)
+- [LSP Integration](./core/LSP.md)
 
-### 🔌 Platform
+### 🔌 [Platform](./category/platform)
 
-- Electron architecture
-- IPC contracts
-- Runtime-specific constraints
+- [Electron & IPC](./platform/IPC.md)
+- [Security Model](./platform/SECURITY.md)
 
-### 🗺️ Roadmap
+### 🗺️ [Roadmap](./roadmap/ROADMAP.md)
 
-- Planned features
-- Execution phases
-- Long-term vision
+- [Execution Phases](./roadmap/ROADMAP.md#execution-phases)
+- [Long-term Vision](./roadmap/ROADMAP.md#long-term-vision)
 
-### 📘 Glossary
+### 📘 [Glossary](./glossary/GLOSSARY.md)
 
-- Shared terminology
-- Core concepts and definitions
+- [Terminology and Definitions](./glossary/GLOSSARY.md)
 
 ---
 
 ## Where to Start
 
-- New to the project → **Architecture / Overview**
-- Working on core logic → **Core & Editor Engine**
-- Desktop-specific work → **Platform / IPC**
+- **New to the project?** Start with the [Architecture Blueprint](./architecture/ARCHITECTURE.md).
+- **Working on UI/React?** Check out the [UI Category](./category/ui).
+- **Implementing Core Logic?** See [Modules Overview](./core/MODULES.md).
+- **Desktop-specific work?** Read about [IPC and Electron](./platform/IPC.md).
 
 ---
 
