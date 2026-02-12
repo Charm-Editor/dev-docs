@@ -1,0 +1,87 @@
+import { AssetCard, AssetsSection } from "@site/src/components/brand";
+
+export const ASSETS_BASE =
+  "https://assets-proxy.teacher-platform-version-proxy.workers.dev";
+
+# 🎨 Brand Assets
+
+Official Charm Editor brand assets.
+All files are served securely from a private repository.
+
+---
+
+## Materials & Formats
+
+| Format   | Usage                          |
+| -------- | ------------------------------ |
+| **SVG**  | UI, docs, websites (preferred) |
+| **PNG**  | Marketing, social media        |
+| **WEBP** | Optimized web usage            |
+| **ICO**  | Favicons                       |
+
+---
+
+<AssetsSection
+  title="Brand Logos (Current)"
+  description="Use these assets for all new designs and integrations."
+>
+  <AssetCard
+    title="Transparent Logo (SVG)"
+    src={`${ASSETS_BASE}/assets/svg/charm-logo-1-trans.svg`}
+    description="The Transparent logo is the logo but with a transparent background."
+    sourceUrl="https://github.com/Charm-Editor/assets/tree/assets/svg"
+  />
+
+<AssetCard
+  title="No Word Logo (SVG)"
+  src={`${ASSETS_BASE}/assets/svg/charm-logo-1-no-word.svg`}
+  description="The No Word logo is the logo but without the word 'Charm Editor'."
+  sourceUrl="https://github.com/Charm-Editor/assets/tree/assets/svg"
+/>
+
+<AssetCard
+  title="Full Frame Logo (PNG)"
+  description="The Full frame logo his shadow looks as if it's stuck to the edges, so it looks as if the shadow has been cut."
+  src={`${ASSETS_BASE}/assets/png/charm-logo-1-full-frame.png`}
+  sourceUrl="https://github.com/Charm-Editor/assets/tree/assets/png"
+/>
+
+  <AssetCard
+    title="Only Word Logo (SVG)"
+    src={`${ASSETS_BASE}/assets/svg/charm-logo-word.svg`}
+    sourceUrl="https://github.com/Charm-Editor/assets/tree/assets/svg"
+  />
+</AssetsSection>
+
+---
+
+<AssetsSection
+  title="Logos (Archive)"
+  description="Legacy assets kept for historical reference."
+>
+  <AssetCard
+    title="Charm Editor Logo (SVG)"
+    src={`${ASSETS_BASE}/archive/svg/charm-editor-logo.svg`}
+    sourceUrl="https://github.com/Charm-Editor/assets/tree/archive/svg"
+  />
+
+<AssetCard
+  title="Charm Editor Logo v2 (PNG)"
+  src={`${ASSETS_BASE}/archive/png/charm-editor-logo-2.png`}
+  sourceUrl="https://github.com/Charm-Editor/assets/tree/archive/png"
+/>
+
+  <AssetCard
+    title="Charm Editor Logo v3 (PNG)"
+    src={`${ASSETS_BASE}/archive/png/charm-editor-logo-3.png`}
+    sourceUrl="https://github.com/Charm-Editor/assets/tree/archive/png"
+  />
+</AssetsSection>
+
+---
+
+## Usage Guidelines
+
+- Prefer SVG for UI usage
+- Do not recolor or stretch logos
+- Archived assets are for legacy use only
