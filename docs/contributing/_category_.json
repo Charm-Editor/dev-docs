@@ -1,0 +1,10 @@
+{
+  "label": "Contributing",
+  "position": 11,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Contributing",
+    "description": "Contributing features and user guides of Charm Editor."
+  }
+}
