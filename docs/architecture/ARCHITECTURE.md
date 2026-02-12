@@ -27,17 +27,20 @@ subgraph UI["Presentation"]
     UIPkg["@charm-editor/ui<br/>React UI<br/>State Binding<br/>View Models"]
 end
 
-subgraph Core["@charm-editor/core"]
-    CorePkg["Core<br/>Use Cases<br/>Domain Models<br/>Business Rules"]
+subgraph Core["@charm-editor/core (Pure)"]
+    Domain["Domain Models"]
+    UseCases["Use Cases"]
+    Ports["Ports (Interfaces)"]
 end
 
 subgraph Infra["Infrastructure (Adapters)"]
-    FS["File System"]
-    LSP["LSP Client"]
-    Git["Git / Runtime APIs"]
+    FS["File System Impl"]
+    LSP["LSP Client Impl"]
+    Runtime["Runtime APIs"]
 end
 
 subgraph Engines["Editor Engines"]
+    Adapter["EditorAdapter"]
     Monaco["Monaco"]
     CM["CodeMirror"]
 end
@@ -45,14 +48,18 @@ end
 Web --> UIPkg
 Desktop --> UIPkg
 
-UIPkg --> CorePkg
+UIPkg --> UseCases
+UIPkg --> Adapter
 
-CorePkg --> FS
-CorePkg --> LSP
-CorePkg --> Git
+Adapter --> Monaco
+Adapter --> CM
 
-UIPkg --> Monaco
-UIPkg --> CM
+UseCases --> Domain
+UseCases -.-> Ports
+
+FS --> Ports
+LSP --> Ports
+Runtime --> Ports
 ```
 
 ---
@@ -68,7 +75,7 @@ UIPkg --> CM
 
 **Contains**
 
-- React bootstrap
+- React TS + tailwindcss
 - WebGPU / WebGL renderer
 - Web FS implementation (OPFS / File Picker)
 
@@ -137,13 +144,33 @@ core/
   - CompileShaderUseCase
   - OpenWorkspaceUseCase
 - infra (interfaces):
-  - FileSystem
-  - LspClient
-  - SnapshotStore
+  - `FileSystemPort`
+  - `LspClientPort`
+  - `SnapshotStorePort`
 
 ---
 
-## 5. @charm-editor/editor-engine
+## 5. Communication Patterns
+
+To maintain strict isolation, we follow these patterns:
+
+### UI → Core
+
+- **Use Cases**: UI invokes specific use cases (e.g., `SaveFileUseCase.execute()`).
+- **View Models**: UI observes Reactive View Models (built with pure TS) for state updates.
+
+### Core → Infra
+
+- **Dependency Injection**: Core defines interfaces (**Ports**). Infrastructure provides implementations (**Adapters**).
+- Core **NEVER** knows about the concrete implementation (e.g., it doesn't know if it's saving to Electron FS or Web OPFS).
+
+### Core → UI
+
+- **Events / Observables**: Core emits events or updates shared state that the UI observes. No direct callbacks.
+
+---
+
+## 6. @charm-editor/editor-engine
 
 ### Goal
 
@@ -177,7 +204,7 @@ This allows:
 
 ---
 
-## 6. @charm-editor/lsp-client
+## 7. @charm-editor/lsp-client
 
 ### Responsibility
 
@@ -197,7 +224,7 @@ Unified LSP communication layer.
 
 ---
 
-## 7. glsl_analyzer (Zig)
+## 8. glsl_analyzer (Zig)
 
 ### Role
 
@@ -216,7 +243,7 @@ Single source of truth for GLSL intelligence.
 
 ---
 
-## 8. @charm-editor/file-system
+## 9. @charm-editor/file-system
 
 ### Responsibility
 
@@ -239,7 +266,7 @@ interface FileSystem {
 
 ---
 
-## 9. Collaboration (Future)
+## 10. Collaboration (Future)
 
 ### Engine
 
@@ -263,7 +290,7 @@ No UI logic inside.
 
 ---
 
-## 10. Data Flow Example (Edit → Compile)
+## 11. Data Flow Example (Edit → Compile)
 
 ```
 User Types
@@ -285,7 +312,7 @@ UI Problems Panel
 
 ---
 
-## 11. Non-Negotiable Rules
+## 12. Non-Negotiable Rules
 
 1. core must stay pure
 2. UI never talks to infra directly
@@ -295,7 +322,7 @@ UI Problems Panel
 
 ---
 
-## 12. Phase Execution Order
+## 13. Phase Execution Order
 
 ### Phase 1
 
