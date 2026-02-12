@@ -1,0 +1,10 @@
+{
+  "label": "Testing",
+  "position": 13,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Testing",
+    "description": "Testing features and user guides of Charm Editor."
+  }
+}
