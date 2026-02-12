@@ -1,4 +1,10 @@
 {
   "label": "Glossary",
-  "position": 4
+  "position": 4,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Glossary",
+    "description": "Glossary features and user guides of Charm Editor."
+  }
 }
