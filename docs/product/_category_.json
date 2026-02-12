@@ -1,4 +1,10 @@
 {
   "label": "Product",
-  "position": 6
+  "position": 6,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index",
+    "title": "Product",
+    "description": "Product features and user guides of Charm Editor."
+  }
 }
