@@ -46,5 +46,10 @@
   },
   "engines": {
     "node": ">=20.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "lodash-es": "4.17.23"
+    }
   }
 }
